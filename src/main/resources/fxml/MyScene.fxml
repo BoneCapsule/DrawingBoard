@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+
+<BorderPane prefHeight="643.0" prefWidth="967.0" stylesheets="@../css/background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <top>
+        <MenuBar>
+           <menus>
+               <Menu mnemonicParsing="false" text="文件">
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#createNewFile" text="新建文件">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                          </accelerator>
+                      </MenuItem>
+                      <MenuItem mnemonicParsing="false" onAction="#openFile" text="打开文件">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                          </accelerator>
+                      </MenuItem>
+                      <MenuItem mnemonicParsing="false" onAction="#saveFile" text="保存文件">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                          </accelerator>
+                      </MenuItem>
+                      <MenuItem mnemonicParsing="false" onAction="#saveImage" text="保存图片">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="P" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                          </accelerator>
+                      </MenuItem>
+                  </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="功能">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#analyze" text="分析" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="编辑">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#revocation" text="撤销">
+                           <accelerator>
+                               <KeyCodeCombination alt="UP" code="Z" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                           </accelerator>
+                       </MenuItem>
+                       <MenuItem mnemonicParsing="false" onAction="#recover" text="恢复">
+                           <accelerator>
+                               <KeyCodeCombination alt="UP" code="Y" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                           </accelerator>
+                       </MenuItem>
+                       <MenuItem mnemonicParsing="false" onAction="#clearAll" text="清空">
+                           <accelerator>
+                               <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                           </accelerator>
+                       </MenuItem>
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="帮助">
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#getAbout" text="关于..." />
+                  </items>
+               </Menu>
+           </menus>
+            <effect>
+                <SepiaTone level="0.25" />
+            </effect>
+        </MenuBar>
+    </top>
+    <center>
+
+        <Canvas fx:id="canvas" height="613.0" onMouseDragged="#onMouseDraggedListener" onMousePressed="#onMousePressedListener" onMouseReleased="#onMouseReleaseListener" width="875.0" />
+    </center>
+    <left>
+        <ToolBar orientation="VERTICAL">
+            <items>
+                <ColorPicker fx:id="colorPicker" prefWidth="80.0">
+                    <effect>
+                        <SepiaTone level="0.25" />
+                    </effect>
+                </ColorPicker>
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="画笔线宽">
+                    <font>
+                        <Font name="STSong" size="15.0" />
+                    </font>
+                </Label>
+                
+                <Label alignment="CENTER" prefHeight="10.0" prefWidth="80.0" text="0" />
+                <Slider fx:id="slider" max="50" min="1" orientation="VERTICAL" prefHeight="250.0" prefWidth="80.0" rotate="180.0" value="5">
+                    <effect>
+                        <SepiaTone level="0.25" />
+                    </effect>
+                </Slider>
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="分析结果">
+               <font>
+                  <Font name="STSong" size="15.0" />
+               </font></Label>
+                <Label fx:id="markLabel" alignment="CENTER" prefHeight="43.0" prefWidth="80.0" text="/&gt;">
+                    <effect>
+                        <SepiaTone level="0.2" />
+                    </effect>
+               <font>
+                  <Font name="KaiTi" size="24.0" />
+               </font>/>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#analyze" prefWidth="80.0" text="识别">
+                    <effect>
+                        <SepiaTone level="0.25" />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#undo" prefWidth="80.0" text="撤销">
+                    <effect>
+                        <SepiaTone level="0.25" />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#redo" prefWidth="80.0" text="恢复">
+                    <effect>
+                        <SepiaTone level="0.25" />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#clear" prefWidth="80.0" text="清空">
+                    <effect>
+                        <SepiaTone level="0.25" />
+                    </effect>
+                </Button>
+            </items>
+            <effect>
+                <SepiaTone level="0.25" />
+            </effect>
+        </ToolBar>
+    </left>
+</BorderPane>
