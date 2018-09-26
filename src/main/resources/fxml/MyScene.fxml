@@ -9,7 +9,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 
-<BorderPane prefHeight="643.0" prefWidth="967.0" stylesheets="@../css/background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<BorderPane prefHeight="643.0" prefWidth="967.0" stylesheets="@../css/background.css"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            maxWidth="643" maxHeight="967"
+            fx:controller="controller.Controller">
     <top>
         <MenuBar>
            <menus>
@@ -39,12 +42,13 @@
                </Menu>
                <Menu mnemonicParsing="false" text="功能">
                    <items>
-                       <MenuItem mnemonicParsing="false" onAction="#analyze" text="识别" />
-					   <accelerator>
+                       <MenuItem mnemonicParsing="false" onAction="#analyze" text="分析">
+                           <accelerator>
                                <KeyCodeCombination alt="UP" code="F" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
                            </accelerator>
+                       </MenuItem>
                    </items>
-				   <items>
+                   <items>
                        <MenuItem mnemonicParsing="false" onAction="#exit" text="退出">
                            <accelerator>
                                <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
@@ -78,7 +82,7 @@
                </Menu>
            </menus>
             <effect>
-                <SepiaTone level="0.25" />
+                <SepiaTone level="0.15" />
             </effect>
         </MenuBar>
     </top>
@@ -89,58 +93,64 @@
     <left>
         <ToolBar orientation="VERTICAL">
             <items>
-                <ColorPicker fx:id="colorPicker" prefWidth="80.0">
+                <ColorPicker fx:id="colorPicker" prefWidth="90.0" prefHeight="50">
                     <effect>
-                        <SepiaTone level="0.25" />
+                        <SepiaTone level="0.10" />
                     </effect>
                 </ColorPicker>
-                <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="画笔线宽">
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="90.0" text="画笔线宽">
                     <font>
                         <Font name="STSong" size="15.0" />
                     </font>
                 </Label>
                 
-                <Label alignment="CENTER" prefHeight="10.0" prefWidth="80.0" text="0" />
-                <Slider fx:id="slider" max="50" min="1" orientation="VERTICAL" prefHeight="250.0" prefWidth="80.0" rotate="180.0" value="5">
+                <Label alignment="CENTER" prefHeight="12.0" prefWidth="90.0" text="0" />
+                <Slider fx:id="slider" max="50" min="1" orientation="VERTICAL" prefHeight="250.0" prefWidth="90.0" rotate="180.0" value="5">
                     <effect>
-                        <SepiaTone level="0.25" />
+                        <SepiaTone level="0.15" />
                     </effect>
                 </Slider>
-                <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="识别结果">
+                <Label alignment="CENTER" prefHeight="12.0" prefWidth="90.0" text="50" />
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="90.0" text="识别结果">
                <font>
                   <Font name="STSong" size="15.0" />
                </font></Label>
-                <Label fx:id="markLabel" alignment="CENTER" prefHeight="43.0" prefWidth="80.0" text="/&gt;">
+                <Label fx:id="markLabel" alignment="CENTER" prefHeight="43.0" prefWidth="90.0" text="/&gt;">
                     <effect>
                         <SepiaTone level="0.2" />
                     </effect>
                <font>
                   <Font name="KaiTi" size="24.0" />
                </font>/>
+                    <style>
+                        -fx-font-size:22;
+                        -fx-text-fill:#999999;
+                        -fx-font-family: STSong;
+                    </style>
                 </Label>
-                <Button mnemonicParsing="false" onAction="#analyze" prefWidth="80.0" text="识别">
+                <Button mnemonicParsing="false" onAction="#analyze" prefWidth="90.0" text="识别">
                     <effect>
-                        <SepiaTone level="0.25" />
+                        <SepiaTone level="0.05" />
                     </effect>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#undo" prefWidth="80.0" text="撤销">
+                <Button mnemonicParsing="false" onAction="#undo" prefWidth="90.0" text="撤销">
                     <effect>
-                        <SepiaTone level="0.25" />
+                        <SepiaTone level="0.05" />
                     </effect>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#redo" prefWidth="80.0" text="恢复">
+                <Button mnemonicParsing="false" onAction="#redo" prefWidth="90.0" text="恢复">
                     <effect>
-                        <SepiaTone level="0.25" />
+                        <SepiaTone level="0.05" />
                     </effect>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#clear" prefWidth="80.0" text="清空">
+                <Button mnemonicParsing="false" onAction="#clear" prefWidth="90.0" text="清空">
                     <effect>
-                        <SepiaTone level="0.25" />
+                        <SepiaTone level="0.05" />
                     </effect>
                 </Button>
             </items>
             <effect>
-                <SepiaTone level="0.25" />
+                <SepiaTone level="0.15" />
             </effect>
         </ToolBar>
     </left>

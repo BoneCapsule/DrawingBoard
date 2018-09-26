@@ -1,4 +1,4 @@
-package application; /**
+﻿package application; /**
  * @program: DrawingBoard
  * @author: Lijie
  * @description: ${description}
@@ -18,6 +18,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/MyScene.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("css/background.css").toExternalForm());
+        primaryStage.setResizable(false);
         primaryStage.setTitle("画板");
         primaryStage.setScene(scene);
         primaryStage.show();
