@@ -1,4 +1,4 @@
-package controller;
+﻿package controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -147,7 +147,9 @@ public class Controller implements Initializable {
 
     @FXML
     public void getAbout() {
-        DialogUtil.showInformationAlert("关于", "画板软件\n版本 1.0\nCopyright © 2018 cst.\n保留一切权利。");
+        DialogUtil.showInformationAlert("关于", "画板软件\n版本 1.0\n识别机制: 使用简单的基于笔画数的识别\n" +
+                "圆形: 一笔\n" + "三角形: 两笔\n" + "矩形: 三笔\n" + "正方形：四笔\n" + "其他多边形或无形状\n" +
+                "Copyright © 2018 cst.\n保留一切权利。");
     }
 
 

@@ -39,7 +39,17 @@
                </Menu>
                <Menu mnemonicParsing="false" text="功能">
                    <items>
-                       <MenuItem mnemonicParsing="false" onAction="#analyze" text="分析" />
+                       <MenuItem mnemonicParsing="false" onAction="#analyze" text="识别" />
+					   <accelerator>
+                               <KeyCodeCombination alt="UP" code="F" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                           </accelerator>
+                   </items>
+				   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#exit" text="退出">
+                           <accelerator>
+                               <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                           </accelerator>
+                       </MenuItem>
                    </items>
                </Menu>
                <Menu mnemonicParsing="false" text="编辑">
@@ -96,7 +106,7 @@
                         <SepiaTone level="0.25" />
                     </effect>
                 </Slider>
-                <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="分析结果">
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="识别结果">
                <font>
                   <Font name="STSong" size="15.0" />
                </font></Label>
